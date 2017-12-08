@@ -1,0 +1,22 @@
+/*
+@import '_home';*/
+
+body {
+	color: #eee;
+}
+
+.card {
+	display: inline-block;
+	width: 300px;
+	min-height: 500px;
+	background-color: #444;
+	color: #efefef;
+	padding: 20px;
+	margin: 40px;
+}
+
+button {
+	background: red;
+	padding: 10px;
+	color: #000;
+}
