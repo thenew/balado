@@ -16,44 +16,30 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // generates favicons and icons for iOS, Android and desktop browsers
 // favicons-webpack-plugin 
 
-// const CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
-
-// Constant with our paths
-const paths = {
-  DIST: path.resolve(__dirname, 'dist'),
-  SRC: path.resolve(__dirname, 'client'),
-};
+// recognizes certain classes of webpack errors and cleans, aggregates and prioritizes them to provide a better Developer Experience.
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
-    entry: path.join(paths.SRC, 'index.js'),
+    entry: './client/index.js',
     output: {
-        path: path.resolve('dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'index_bundle.js'
     },
     module: {
         loaders: [
+
+            // Babel
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-            // {
-            //     test: /\.styl$/,
-            //     loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
-            // }
+
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
+            },
         ],
-        // rules: [
-        //     {
-        //         test: /\.css$/,
-        //         use: [
-        //             {
-        //                 loader: 'postcss-loader',
-        //                 options: {
-        //                     plugins: function () {
-        //                         return [autoprefixer]
-        //                     }
-        //                 }
-        //             }
-        //         ]
-        //     }
-        // ]
     },
     devServer: {
         contentBase: './',
@@ -74,21 +60,8 @@ module.exports = {
             inject: 'body'
             // inlineSource: '.(sss|css)$',
         }),
-        // new ExtractTextPlugin('style.bundle.css')
-
-        // new webpack.LoaderOptionsPlugin({
-        //     options: {
-        //         postcss: [
-        //         autoprefixer(),
-        //         ]
-        //     }
-        // }),
-        // new CriticalPlugin({
-        //     src: './client/index.html',
-        //     inline: true,
-        //     minify: true,
-        //     dest: './public/index.html'
-        // })
+        new ExtractTextPlugin("styles.css"),
+        new FriendlyErrorsWebpackPlugin(),
     ],
     
     // Enable importing JS files without specifying their's extenstion

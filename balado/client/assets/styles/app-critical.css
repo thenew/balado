@@ -1,0 +1,9 @@
+/*@import '_default';*/
+
+:root {
+    --color-alpha: #633487;
+}
+
+body {
+    background-color: var(--color-alpha);
+}

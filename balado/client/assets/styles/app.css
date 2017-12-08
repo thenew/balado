@@ -1,11 +1,22 @@
-@import '_default';
-@import '_home';
-
-
-:root {
-    --color-alpha: #633487;
-}
+/*
+@import '_home';*/
 
 body {
-    background-color: var(--color-alpha);
+	color: #eee;
+}
+
+.card {
+	display: inline-block;
+	width: 300px;
+	min-height: 500px;
+	background-color: #444;
+	color: #efefef;
+	padding: 20px;
+	margin: 40px;
+}
+
+button {
+	background: red;
+	padding: 10px;
+	color: #000;
 }
