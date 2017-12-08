@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Header extends React.Component {
     render() {
@@ -7,9 +8,9 @@ export default class Header extends React.Component {
                 <header className="app-header">
                     <h2>Header component</h2>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/podcast/1">Podcast</a></li>
-                        <li><a href="/about">About</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/podcast/1">Podcast</Link></li>
+                        <li><Link to="/about">About</Link></li>
                       </ul>
                 </header>
             </div>

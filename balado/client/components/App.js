@@ -1,8 +1,12 @@
-import React from 'react';
-import Header from './Header';
-import Home from './Home';
-import About from './About';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React from 'react'
+import Header from './Header'
+import Home from './Home'
+import About from './About'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 export default class App extends React.Component {
     render() {
@@ -17,6 +21,13 @@ export default class App extends React.Component {
 		);
     }
 }
+
+
+
+
+
+
+
 /*
 import React from 'react'
 import {
