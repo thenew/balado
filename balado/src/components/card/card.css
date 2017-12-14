@@ -1,0 +1,12 @@
+.card {
+    display: inline-block;
+    width: 100%;
+	max-width: 300px;
+	min-height: 500px;
+	background-color: #444;
+	color: #efefef;
+	padding: 20px;
+}
+.title {
+    color: #888;
+}
