@@ -2,7 +2,7 @@ import React from 'react';
 
 import Base from '../../Base';
 import Card from '../../components/card/Card'
-import s from './home.css';
+import s from './home.styl';
 
 export default class Home extends Base {
     render() {

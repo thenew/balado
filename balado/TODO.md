@@ -3,7 +3,7 @@
 - Router ✓
 - CSS ✓
 - Redux
-- Stylus
+- Stylus ✓
 - SVG
 - i18n
 - Animations in/out (transitions)
