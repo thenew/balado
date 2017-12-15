@@ -6,6 +6,7 @@ export default class Card extends React.Component {
         return (
 	        <div className={s.card}>
 				<h2 className={s.title}>{this.props.title}</h2>
+				<p className={s.category}>{this.props.category}</p>
 	        </div>
 		);
     }

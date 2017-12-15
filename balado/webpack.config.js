@@ -135,16 +135,10 @@ module.exports = {
         quiet: false,
     },
 
-
-
-    // options for resolving module requests
-    // (does not apply to resolving to loaders)
-
-
     // Enable importing JS files without specifying their's extenstion
     // So we can write: import MyComponent from './my-component';
     resolve: {
-        extensions: ['.js', '.jsx', '.css', '.styl'],
+        extensions: ['.js', '.styl'],
     },
 
     // stats: 'minimal'

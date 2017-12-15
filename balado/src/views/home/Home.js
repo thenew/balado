@@ -1,19 +1,29 @@
 import React from 'react';
 
 import Base from '../../Base';
-import Card from '../../components/card/Card'
-import s from './home.styl';
+import CardList from '../../components/card-list/CardList'
+import s from './home.styl'
+import data from '../../data/cards.json'
 
 export default class Home extends Base {
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			items: data
+		}
+	}
+
+	componentWillMount() {
+	}
+
     render() {
         return (
         	<div className={'view ' + s.home}>
         		<div className={s.title}>Home component</div>
-				<div className={s.cards}>
-					<div className={s.card}><Card title="a" /></div>
-					<div className={s.card}><Card title="b" /></div>
-					<div className={s.card}><Card title="c" /></div>
-				</div>
+
+				<CardList items={this.state.items}/>
+
 		        <h2 className="test">content</h2>
         		<p>
 		          <button type="button">button</button>
