@@ -33,18 +33,13 @@ const poststylus = require('poststylus');
 const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
-
-    // the home directory for webpack
-    // the entry and module.rules.loader option
-    //   is resolved relative to this directory
-    context,
-    
-    entry: './index.js',
+    entry: path.resolve(__dirname, 'src/index.js'),
     output: {
         // the target directory for all output files
         // must be an absolute path (use the Node.js path module)
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js' // entry name substitution
+        filename: '[name].js', // entry name substitution
+        publicPath: '/' // important
     },
     
     module: {
@@ -104,7 +99,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("app.css", {allChunks: false}),
         new HtmlWebpackPlugin({
-            template: 'index.html',
+            template: path.resolve(__dirname, 'src/index.html'),
             // filename: 'index.html',
             // inject: 'body'
             // inlineSource: '.(sss|css)$',

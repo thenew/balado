@@ -17,19 +17,23 @@ export default class Home extends Base {
 	}
 
 	componentDidMount() {
-		if (this.props.match.params.id) {
+		this.filterList()
+	}
+
+	componentWillReceiveProps(props) {
+		this.props = props;
+		this.filterList()
+	}
+		
+    filterList() {
+		if(this.props.match.params.slug) {
+			let newList = data.filter((item) => {
+				return item.category_id == this.props.match.params.slug
+			})
 			this.setState({
-				items: this.filterList()
+				items: newList
 			})
 		}
-	}
-    
-    filterList() {
-		console.log("this.props.match.params.id: ", this.props.match.params.id);
-        let newList = data.filter((item) => {
-            return item.category_id == this.props.match.params.id
-		})
-		return newList
 	}
 	
     render() {
@@ -38,9 +42,10 @@ export default class Home extends Base {
         		<div className={s.title}>Home component</div>
 
 				<div>
-					<Link to="/category/1" data-category="1" onClick={this.filterList}>Categorie 1</Link>
-					<Link to="/category/2" data-category="2" onClick={this.filterList}>Categorie 2</Link>
-					<Link to="/category/3" data-category="3" onClick={this.filterList}>Categorie 3</Link>
+					<Link to="/">None</Link>
+					<Link to="/category/1">Categorie 1</Link>
+					<Link to="/category/2">Categorie 2</Link>
+					<Link to="/category/3">Categorie 3</Link>
 				</div>
 
 				<CardList items={this.state.items}/>

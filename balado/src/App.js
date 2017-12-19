@@ -19,7 +19,9 @@ export default class App extends React.Component {
             <div>
                 <Header />
                 <Route exact path="/" component={Home} />
-                <Route path="/category/:id" component={Home} />
+                <Route exact path="/category" component={Home} />
+                <Route path="/category/:slug" component={Home} />
+                <Route path="/about" component={About} />
                 <Route path="/about" component={About} />
             </div>
         </Router>
