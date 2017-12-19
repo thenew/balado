@@ -9,6 +9,11 @@ import Header from './components/header/Header'
 import Home from './views/home/Home'
 import About from './views/About'
 
+
+import './assets/svg/twitter-icon.svg';
+import './assets/svg/patreon-icon.svg';
+
+
 // import '../assets/styles/app-critical.css';
 import './assets/styles/app.styl';
 

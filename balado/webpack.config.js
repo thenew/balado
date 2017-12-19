@@ -29,6 +29,8 @@ const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const poststylus = require('poststylus');
 
+const svgoLoader = require('svgo-loader');
+
 // set environment, coming from package.json scripts
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -92,6 +94,14 @@ module.exports = {
                         ]
                     ]
                 }
+            },
+            {
+                test: /\.svg$/,
+                include: path.resolve('./src/assets/svg'),
+                use: [
+                  'svg-sprite-loader'
+                //   'svgo-loader'
+                ]
             }
         ],
     },
