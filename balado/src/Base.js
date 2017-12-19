@@ -13,9 +13,9 @@ export default class Base extends React.Component {
     // invoked immediately after a component is mounted
     componentDidMount() {
 
-        setTimeout(() => {
-            TweenMax.to(this.main, 1, {opacity: 1});
-        }, 600);
+        // setTimeout(() => {
+        //     TweenMax.to(this.main, 1, {opacity: 1});
+        // }, 600);
     }
     
     // invoked immediately before a component is unmounted and destroyed

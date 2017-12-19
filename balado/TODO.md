@@ -6,6 +6,7 @@
 - Stylus ✓
 - SVG
 - i18n
+- Favicons
 - Animations in/out (transitions)
 - Critical CSS
 - Google Analytics: galite

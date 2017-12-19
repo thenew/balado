@@ -2,21 +2,25 @@
     {
         "id": 1,
         "title": "Title I",
-        "category": "category A"
+        "category": "categorie A",
+        "category_id": 1
     },
     {
         "id": 2,
         "title": "Title II",
-        "category": "category A"
+        "category": "categorie A",
+        "category_id": 1
     },
     {
         "id": 3,
         "title": "Title III",
-        "category": "category B"
+        "category": "categorie B",
+        "category_id": 2
     },
     {
         "id": 4,
         "title": "Title IV",
-        "category": "category C"
+        "category": "categorie C",
+        "category_id": 3
     }
 ]
