@@ -4,10 +4,10 @@
 - CSS ✓
 - Redux
 - Stylus ✓
-- SVG
+- SVG ✓
 - i18n
 - Favicons
-- fix paths
+- fix paths ✓
 - Animations in/out (transitions)
 - Critical CSS
 - Google Analytics: galite

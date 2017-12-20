@@ -145,6 +145,8 @@ module.exports = {
             Views: path.resolve(__dirname, './src/Views'),
             Styles: path.resolve(__dirname, './src/assets/styles'),
             SvgIcons: path.resolve(__dirname, './src/assets/svg'),
+            I18n: path.resolve(__dirname, './src/i18n'),
+            Data: path.resolve(__dirname, './src/data'),
         },
 
         // enable importing JS files without specifying their's extenstion

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import Base from '../../Base';
-import CardList from '../../components/card-list/CardList'
 import s from './home.styl'
-import data from '../../data/cards.json'
+import Base from '../../Base';
+import CardList from 'Components/card-list/CardList'
+import data from 'Data/cards.json'
 
 export default class Home extends Base {
 	constructor(props) {

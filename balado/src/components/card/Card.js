@@ -1,6 +1,7 @@
-import React from 'react';
-import s from './card.styl';
-import Icon from 'Components/Icon';
+import React from 'react'
+import { FormattedMessage, FormattedDate, FormattedRelative } from 'react-intl'
+import s from './card.styl'
+import Icon from 'Components/Icon'
 
 export default class Card extends React.Component {
 
@@ -15,6 +16,30 @@ export default class Card extends React.Component {
 				<a href="" className="patreon">
 					<Icon id="patreon-icon" width="30" />
 				</a>
+				<div>
+					<a href="">
+					<FormattedMessage 
+						id="card.moreInfo"
+						defaultMessage="More info"
+						description="Card see more"
+					/>
+					</a>
+				</div>
+				<div>
+					<FormattedDate
+					value={Date.now()}
+					year='numeric'
+					month='long'
+					day='2-digit'
+					hour='numeric'
+					minute='numeric'
+					/>
+				</div>
+				<div>
+					<FormattedRelative
+					value={new Date(1459832991883)}
+					/>
+				</div>
 	        </div>
 		);
     }

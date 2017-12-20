@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../../components/card/Card'
 import s from './card-list.styl'
+import Card from 'Components/card/Card'
 
 export default class CardList extends React.Component {
 	constructor(props) {
