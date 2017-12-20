@@ -134,13 +134,21 @@ module.exports = {
         // enable HotModuleReplacementPlugin
         hot: true,
 
-        // Suppress error shown in console
+        // suppress error shown in console
         quiet: false,
     },
 
-    // Enable importing JS files without specifying their's extenstion
-    // So we can write: import MyComponent from './my-component';
     resolve: {
+
+        alias: {
+            Components: path.resolve(__dirname, './src/components'),
+            Views: path.resolve(__dirname, './src/Views'),
+            Styles: path.resolve(__dirname, './src/assets/styles'),
+            SvgIcons: path.resolve(__dirname, './src/assets/svg'),
+        },
+
+        // enable importing JS files without specifying their's extenstion
+        // so we can write: import MyComponent from './my-component';
         extensions: ['.js', '.styl'],
     },
 
