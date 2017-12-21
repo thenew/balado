@@ -29,7 +29,7 @@ const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const poststylus = require('poststylus');
 
-const svgoLoader = require('svgo-loader');
+// const svgoLoader = require('svgo-loader');
 
 // set environment, coming from package.json scripts
 const NODE_ENV = process.env.NODE_ENV;
@@ -37,6 +37,7 @@ const NODE_ENV = process.env.NODE_ENV;
 module.exports = {
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
+        
         // the target directory for all output files
         // must be an absolute path (use the Node.js path module)
         path: path.resolve(__dirname, 'dist'),
@@ -101,6 +102,18 @@ module.exports = {
                 use: [
                   'svg-sprite-loader'
                 //   'svgo-loader'
+                ]
+            },
+            {
+                test: /\.(ttf|woff|woff2)$/,
+                include: path.resolve('./src/assets/fonts'),
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            filename: '[name].[ext]'
+                        }
+                    }
                 ]
             }
         ],
