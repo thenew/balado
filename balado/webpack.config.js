@@ -63,7 +63,7 @@ module.exports = {
                     {
                         loader: 'stylus-loader',
                         options: {
-                            use: [poststylus([ 'autoprefixer' ])],
+                            use: [poststylus([ 'autoprefixer', 'postcss-custom-properties' ])],
                         },
                     },
                 ]
