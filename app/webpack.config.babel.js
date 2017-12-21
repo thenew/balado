@@ -9,27 +9,31 @@
  */
 
 // Node's native package
-const path = require('path');
+import path from 'path';
 
-const context = path.resolve(__dirname, 'src');
+const context = path.resolve(__dirname, 'src')
 
 // ?
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 // Simplifies creation of HTML files to serve your webpack bundles
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+
+// cleans output
+import WebpackCleanupPlugin from 'webpack-cleanup-plugin'
 
 // generates favicons and icons for iOS, Android and desktop browsers
 // favicons-webpack-plugin 
 
 // recognizes certain classes of webpack errors and cleans, aggregates and prioritizes them to provide a better Developer Experience.
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
 
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
+import PreloadWebpackPlugin from 'preload-webpack-plugin'
 
-const poststylus = require('poststylus');
+import poststylus from 'poststylus'
 
-// const svgoLoader = require('svgo-loader');
+
+// import svgoLoader from 'svgo-loader'
 
 // set environment, coming from package.json scripts
 const NODE_ENV = process.env.NODE_ENV;
@@ -111,7 +115,8 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            filename: '[name].[ext]'
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
                         }
                     }
                 ]
@@ -120,6 +125,9 @@ module.exports = {
     },
 
     plugins: [
+        // cleans output
+        new WebpackCleanupPlugin(),
+
         new ExtractTextPlugin("app.css", {allChunks: false}),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html'),

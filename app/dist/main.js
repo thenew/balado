@@ -38577,13 +38577,13 @@ exports.locals = {
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "a34484e451f48ba907f138318c3a5073.woff";
+module.exports = __webpack_require__.p + "fonts/jaapokkisubtract-regular.woff";
 
 /***/ }),
 /* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "928411e042d0eebf627a4613ece16672.ttf";
+module.exports = __webpack_require__.p + "fonts/jaapokkisubtract-regular.ttf";
 
 /***/ }),
 /* 126 */
