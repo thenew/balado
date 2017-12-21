@@ -23,7 +23,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WebpackCleanupPlugin from 'webpack-cleanup-plugin'
 
 // generates favicons and icons for iOS, Android and desktop browsers
-// favicons-webpack-plugin 
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
 
 // recognizes certain classes of webpack errors and cleans, aggregates and prioritizes them to provide a better Developer Experience.
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
@@ -141,6 +141,26 @@ module.exports = {
             include: 'asyncChunks'
         }),
         new FriendlyErrorsWebpackPlugin(),
+        new FaviconsWebpackPlugin({
+            logo: path.resolve(__dirname, 'src/assets/icons/app-icon.png'), // source image
+            inject: true, // Inject the html into the html-webpack-plugin
+            background: '#fff', // favicon background color 
+            title: 'Balado', // app title
+        
+            // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+            icons: {
+                android: true, // Android homescreen icon
+                appleIcon: true, // Apple touch icons
+                appleStartup: true, // Apple startup images
+                coast: false, // Opera Coast
+                favicons: true, // regular favicons
+                firefox: false, // Firefox OS icons
+                opengraph: false, // ?
+                twitter: false, // ?
+                yandex: false, // Yandex browser icon
+                windows: false // Windows 8 tile icons
+            }
+        })
     ],
     
     devServer: {
