@@ -13,7 +13,7 @@ import path from 'path';
 
 const context = path.resolve(__dirname, 'src')
 
-// ?
+// Extract text from a bundle, or bundles, into a separate file. Use for css
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 // Simplifies creation of HTML files to serve your webpack bundles
@@ -37,6 +37,7 @@ import poststylus from 'poststylus'
 
 // set environment, coming from package.json scripts
 const NODE_ENV = process.env.NODE_ENV;
+const IS_DEV = (NODE_ENV == 'development')
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/index.js'),
@@ -51,20 +52,14 @@ module.exports = {
     
     module: {
         loaders: [
+
+            // Stylus general without css modules
             {
                 test: /\.styl$/,
-                include: path.resolve(__dirname, 'src'),
+                include: path.resolve(__dirname, 'src/assets/styles/app.styl'),
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: (NODE_ENV == 'development') ? true : false,
-                            // importLoaders: 1,
-                            modules: true,
-                            localIdentName: '[path][name]__[local]'
-                        }
-                    },
+                    'css-loader',
                     {
                         loader: 'stylus-loader',
                         options: {
@@ -72,22 +67,43 @@ module.exports = {
                         },
                     },
                 ]
-            }, {
+            },
+
+            // Stylus of components/views with css modules
+            {
+                test: /\.styl$/,
+                include: path.resolve(__dirname, 'src/'),
+                exclude: path.resolve(__dirname, 'src/assets/styles/'),
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: IS_DEV,
+                                modules: true,
+                                localIdentName: '[path][name]__[local]'
+                            }
+                        },
+                        {
+                            loader: 'stylus-loader',
+                            options: {
+                                use: [poststylus([ 'autoprefixer', 'postcss-custom-properties' ])],
+                            },
+                        },
+                    ]
+                })
+            },
+
+            {
                 test: /\.css$/,
                 include: path.resolve(__dirname, 'src'),
                 use: [
-                   'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: (NODE_ENV == 'development') ? true : false,
-                            // importLoaders: 1,
-                            modules: true,
-                            localIdentName: '[path][name]__[local]'
-                        }
-                    },
+                    'style-loader',
+                    'css-loader',
                 ]
-            }, {
+            },
+            {
                 test: /\.js$/,
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
@@ -127,8 +143,10 @@ module.exports = {
     plugins: [
         // cleans output
         new WebpackCleanupPlugin(),
-
-        new ExtractTextPlugin("app.css", {allChunks: false}),
+        new ExtractTextPlugin({
+			filename: 'app.[hash].css',
+			allChunks: false
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
             // filename: 'index.html',
@@ -143,7 +161,7 @@ module.exports = {
         new FriendlyErrorsWebpackPlugin(),
         new FaviconsWebpackPlugin({
             logo: path.resolve(__dirname, 'src/assets/icons/app-icon.png'), // source image
-            inject: true, // Inject the html into the html-webpack-plugin
+            inject: !IS_DEV, // Inject the html into the html-webpack-plugin
             background: '#fff', // favicon background color 
             title: 'Balado', // app title
         

@@ -14,7 +14,7 @@ let svgIcons = require.context('SvgIcons', false, /.*\.svg$/)
 svgIcons.keys().map(svgIcons)
 
 // import '../assets/styles/app-critical.css';
-import './assets/styles/app.styl';
+// import './assets/styles/app.styl';
 
 export default class App extends React.Component {
     render() {

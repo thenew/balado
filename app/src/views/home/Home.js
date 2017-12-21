@@ -39,21 +39,18 @@ export default class Home extends Base {
     render() {
         return (
         	<div className={'view ' + s.home}>
+			<div className="wrap test">
         		<div className={s.title}>Home component</div>
 
-				<div>
-					<Link to="/">None</Link>
-					<Link to="/category/1">Categorie 1</Link>
-					<Link to="/category/2">Categorie 2</Link>
-					<Link to="/category/3">Categorie 3</Link>
+					<div>
+						<Link to="/">None</Link>
+						<Link to="/category/1">Categorie 1</Link>
+						<Link to="/category/2">Categorie 2</Link>
+						<Link to="/category/3">Categorie 3</Link>
+					</div>
+
+					<CardList items={this.state.items}/>
 				</div>
-
-				<CardList items={this.state.items}/>
-
-		        <h2 className="test">content</h2>
-        		<p>
-		          <button type="button">button</button>
-		        </p>
         	</div>
     	);
     }
