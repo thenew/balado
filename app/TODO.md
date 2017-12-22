@@ -10,5 +10,5 @@
 - fix paths ✓
 - Fonts ✓
 - Animations in/out (transitions)
-- Critical CSS
+- Critical CSS ✓ (Not automatic)
 - Google Analytics: galite

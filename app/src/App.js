@@ -9,13 +9,6 @@ import Header from './components/header/Header'
 import Home from './views/home/Home'
 import About from './views/About'
 
-// import all the svg in /svg at once instead of import them before every use
-let svgIcons = require.context('SvgIcons', false, /.*\.svg$/)
-svgIcons.keys().map(svgIcons)
-
-// import '../assets/styles/app-critical.css';
-import './assets/styles/app.styl';
-
 export default class App extends React.Component {
     render() {
         return (

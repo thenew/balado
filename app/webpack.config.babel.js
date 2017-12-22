@@ -59,7 +59,12 @@ module.exports = {
                 include: path.resolve(__dirname, 'src/assets/styles/app.styl'),
                 use: [
                     'style-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: !IS_DEV
+                        }
+                    },
                     {
                         loader: 'stylus-loader',
                         options: {
@@ -80,6 +85,7 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
+                                minimize: !IS_DEV,
                                 sourceMap: IS_DEV,
                                 modules: true,
                                 localIdentName: '[path][name]__[local]'
@@ -95,14 +101,15 @@ module.exports = {
                 })
             },
 
-            {
-                test: /\.css$/,
-                include: path.resolve(__dirname, 'src'),
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ]
-            },
+            // {
+            //     test: /\.css$/,
+            //     include: path.resolve(__dirname, 'src'),
+            //     use: [
+            //         'style-loader',
+            //         'css-loader',
+            //     ]
+            // },
+
             {
                 test: /\.js$/,
                 include: path.resolve(__dirname, 'src'),
@@ -120,8 +127,8 @@ module.exports = {
                 test: /\.svg$/,
                 include: path.resolve('./src/assets/svg'),
                 use: [
-                  'svg-sprite-loader'
-                //   'svgo-loader'
+                  'svg-sprite-loader',
+                  'svgo-loader'
                 ]
             },
             {
