@@ -6,6 +6,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
+import ConnectedIntlProvider from './ConnectedIntlProvider';
+
+// # Redux
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import baladoApp from './reducers'
+let store = createStore(baladoApp)
 
 
 // # SVG
@@ -39,11 +46,25 @@ import { flattenMessages } from './utils'
 import localeData from 'I18n/messages'
 
 // Get translated strings, try full locale, fallback to locale without region code
-const messages = localeData[localeWithoutRegionCode] || localeData[locale];
+let messages = localeData[localeWithoutRegionCode] || localeData[locale];
+
+messages = flattenMessages(messages)
+
+store.dispatch({
+    "type": 'SET_LOCALE',
+    "locale": locale
+})
+
+store.dispatch({
+    "type": 'SET_MESSAGES',
+    "messages": messages
+})
 
 ReactDOM.render(
-    <IntlProvider locale={locale} messages={flattenMessages(messages)}>
-        <App />
-    </IntlProvider>,
+    <Provider store={store}>
+        <ConnectedIntlProvider>
+            <App />
+        </ConnectedIntlProvider>
+    </Provider>,
     document.getElementById('root')
 );

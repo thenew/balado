@@ -38,9 +38,9 @@ export default class Home extends Base {
 	
     render() {
         return (
-        	<div className={'view ' + s.home}>
-			<div className="wrap test">
-        		<div className={s.title}>Home component</div>
+        	<div className={'view ' + s.view}>
+				<div className="wrap">
+					<div className={s.title}>Home component</div>
 
 					<div>
 						<Link to="/">None</Link>
