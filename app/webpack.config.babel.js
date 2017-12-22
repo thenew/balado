@@ -144,7 +144,7 @@ module.exports = {
         // cleans output
         new WebpackCleanupPlugin(),
         new ExtractTextPlugin({
-			filename: 'app.[hash].css',
+			filename: (IS_DEV) ? 'app.css' : 'app.[hash].css',
 			allChunks: false
         }),
         new HtmlWebpackPlugin({
