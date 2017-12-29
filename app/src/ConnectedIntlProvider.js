@@ -5,11 +5,13 @@ import { IntlProvider } from 'react-intl';
 // When the state of the redux store changes, this function will be called, if the props that come out of
 // this function are different, then the component that is wrapped is re-rendered.
 function mapStateToProps(state) {
-    console.log("state.locale: ", state.locale);
+    console.log("%c mapStateToProps ", 'background: #000; color: #ffff00; padding: 1px 0;');
+    console.log("Connected IntlProvider state.locale: ", state.locale);
     return { 
         locale: state.locale,
         messages: state.messages
     };
 }
 
+// export connected React Intl Provider
 export default connect(mapStateToProps)(IntlProvider);

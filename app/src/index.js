@@ -6,7 +6,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import ConnectedIntlProvider from './ConnectedIntlProvider';
+
 
 // # Redux
 import { Provider } from 'react-redux'
@@ -27,7 +27,8 @@ import './assets/styles/app.styl';
 
 
 // # i18n
-import {addLocaleData, IntlProvider} from 'react-intl'
+import ConnectedIntlProvider from './ConnectedIntlProvider';
+import {addLocaleData} from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import fr from 'react-intl/locale-data/fr'
 addLocaleData([...en, ...fr])
@@ -61,8 +62,8 @@ store.dispatch({
 })
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ConnectedIntlProvider>
+    <Provider store={store}> 
+        <ConnectedIntlProvider> 
             <App />
         </ConnectedIntlProvider>
     </Provider>,

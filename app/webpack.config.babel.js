@@ -207,8 +207,9 @@ module.exports = {
     resolve: {
 
         alias: {
+            Src: path.resolve(__dirname, './src'),
             Components: path.resolve(__dirname, './src/components'),
-            Views: path.resolve(__dirname, './src/Views'),
+            Views: path.resolve(__dirname, './src/views'),
             Styles: path.resolve(__dirname, './src/assets/styles'),
             SvgIcons: path.resolve(__dirname, './src/assets/svg'),
             I18n: path.resolve(__dirname, './src/i18n'),
