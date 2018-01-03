@@ -88,6 +88,7 @@ module.exports = {
                                 minimize: !IS_DEV,
                                 sourceMap: IS_DEV,
                                 modules: true,
+                                camelCase: 'dashes',
                                 localIdentName: '[path][name]__[local]'
                             }
                         },
