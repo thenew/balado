@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tmx version="1.4">
+  <header creationtool="memsource_tool" creationtoolversion="2.0" segtype="sentence" o-tmf="memsourceTM" adminlang="en" srclang="en" datatype="unknown" creationdate="20180103T163934Z">
+    <prop type="name">balado</prop>
+  </header>
+  <body>
+    <tu tuid="2u6vcJ9ng3U20O98dp0uVQTO3">
+      <tuv xml:lang="en">
+        <prop type="context_prev">Home</prop>
+        <seg>More info</seg>
+      </tuv>
+      <tuv xml:lang="fr" creationdate="20180103T163458Z" changedate="20180103T163458Z">
+        <prop type="project">11092266</prop>
+        <prop type="reviewed">false</prop>
+        <prop type="aligned">false</prop>
+        <prop type="created_at">1514997298000</prop>
+        <prop type="created_by">remy+balado@thenew.fr</prop>
+        <prop type="modified_at">1514997298000</prop>
+        <prop type="modified_by">remy+balado@thenew.fr</prop>
+        <prop type="filename">en_US.json</prop>
+        <seg>Plus d’infos</seg>
+      </tuv>
+    </tu>
+    <tu tuid="aO1iCCrTwP0bQfh0UH6Sv5PM3">
+      <tuv xml:lang="en">
+        <prop type="context_next">More info</prop>
+        <seg>Home</seg>
+      </tuv>
+      <tuv xml:lang="fr" creationdate="20180103T163456Z" changedate="20180103T163456Z">
+        <prop type="project">11092266</prop>
+        <prop type="reviewed">false</prop>
+        <prop type="aligned">false</prop>
+        <prop type="created_at">1514997296000</prop>
+        <prop type="created_by">remy+balado@thenew.fr</prop>
+        <prop type="modified_at">1514997296000</prop>
+        <prop type="modified_by">remy+balado@thenew.fr</prop>
+        <prop type="filename">en_US.json</prop>
+        <seg>Accueil</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

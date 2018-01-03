@@ -26,7 +26,7 @@ svgIcons.keys().map(svgIcons)
 import './assets/styles/app.styl';
 
 
-// # i18n
+// # i18n l10n
 import ConnectedIntlProvider from './ConnectedIntlProvider';
 import {addLocaleData} from 'react-intl'
 import en from 'react-intl/locale-data/en'

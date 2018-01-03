@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl';
 import s from './header.styl'
 import { Link } from 'react-router-dom'
 
@@ -49,11 +50,23 @@ class Header extends React.Component {
         return (
             <header className={s.header}>
                 <div className="wrap">
-                    <h2>|/|/¦¦</h2>
+                    <h2>․﹒◉．∙․◦﹒．○•</h2>
                     <ul className={s.menu}>
-                        <li className={s.menuItem}><Link to="/">Home</Link></li>
+                        <li className={s.menuItem}>
+                            <Link to="/">
+                                <FormattedMessage 
+                                    id="menu.home"
+                                    defaultMessage="Home"
+                                    description="Home link"
+                                />
+                            </Link>
+                        </li>
                         <li className={s.menuItem}><Link to="/podcast/1">Podcast</Link></li>
-                        <li className={s.menuItem}><Link to="/about">About</Link></li>
+                        <li className={s.menuItem}>
+                            <Link to="/about">
+                            <FormattedMessage id="menu.about" defaultMessage="About" />
+                            </Link>
+                        </li>
                         <li>
                             <select name="" id="lang" value={locale} onChange={this.change}>
                                 <option value="" disabled selected>Select</option>

@@ -32,6 +32,8 @@ import PreloadWebpackPlugin from 'preload-webpack-plugin'
 
 import poststylus from 'poststylus'
 
+// i18n
+import ReactIntlPlugin from 'react-intl-webpack-plugin'
 
 // import svgoLoader from 'svgo-loader'
 
@@ -95,7 +97,10 @@ module.exports = {
                         {
                             loader: 'stylus-loader',
                             options: {
-                                use: [poststylus([ 'autoprefixer', 'postcss-custom-properties' ])],
+                                use: [poststylus([ 
+                                    'autoprefixer',
+                                    'postcss-custom-properties' // css variables
+                                ])],
                             },
                         },
                     ]
@@ -116,11 +121,20 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
                 query: {
+                    
+                    // i18n ReactIntlPlugin combine messages files
+                    "cacheDirectory": true,
+                    "metadataSubscribers":[ReactIntlPlugin.metadataContextFunctionName],
+
                     plugins: [
                         'transform-react-jsx',
-                        [
-                            'react-css-modules', { context }
-                        ]
+                        ['react-css-modules', { context }],
+
+                         // extract translated strings
+                        ['react-intl', {
+                            'messagesDir': path.resolve(__dirname, 'src/languages'),
+                            // 'enforceDescriptions': false
+                        }]
                     ]
                 }
             },
@@ -149,8 +163,8 @@ module.exports = {
     },
 
     plugins: [
-        // cleans output
-        new WebpackCleanupPlugin(),
+        // cleans output directory
+        // new WebpackCleanupPlugin(),
         new ExtractTextPlugin({
 			filename: (IS_DEV) ? 'app.css' : 'app.[hash].css',
 			allChunks: false
@@ -186,7 +200,8 @@ module.exports = {
                 yandex: false, // Yandex browser icon
                 windows: false // Windows 8 tile icons
             }
-        })
+        }),
+        new ReactIntlPlugin(),
     ],
     
     devServer: {
@@ -213,13 +228,13 @@ module.exports = {
             Views: path.resolve(__dirname, './src/views'),
             Styles: path.resolve(__dirname, './src/assets/styles'),
             SvgIcons: path.resolve(__dirname, './src/assets/svg'),
-            I18n: path.resolve(__dirname, './src/i18n'),
+            Languages: path.resolve(__dirname, './src/languages'),
             Data: path.resolve(__dirname, './src/data'),
         },
 
         // enable importing JS files without specifying their's extenstion
         // so we can write: import MyComponent from './my-component';
-        extensions: ['.js', '.styl'],
+        extensions: ['.js', '.json', '.styl'],
     },
 
     // stats: 'minimal'
