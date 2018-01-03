@@ -6,10 +6,9 @@ import { IntlProvider } from 'react-intl';
 // this function are different, then the component that is wrapped is re-rendered.
 function mapStateToProps(state) {
     console.log("%c mapStateToProps ", 'background: #000; color: #ffff00; padding: 1px 0;');
-    console.log("Connected IntlProvider state.locale: ", state.locale);
     return { 
-        locale: state.locale,
-        messages: state.messages
+        locale: state.i18n.locale,
+        messages: state.i18n.messages
     };
 }
 

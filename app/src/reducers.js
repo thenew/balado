@@ -1,28 +1,34 @@
 import { combineReducers } from 'redux'
 
-// Reducer locale
-function locale(state = 'en-US', action) {
+// i18n
+import { flattenMessages } from './utils'
+import localeData from 'I18n/messages'
+
+// Reducer i18n locale
+function i18n(state = 'en-US', action) {
     switch (action.type) {
         case 'SET_LOCALE':
-            console.log("%c reducers SET_LOCALE ", 'background: #000; color: #ffff00; padding: 1px 0;');
-            return action.locale
+
+            // Split user locale with a region code (get the 'en' in 'en-US')
+            const localeWithoutRegionCode = action.locale.toLowerCase().split(/[_-]+/)[0]
+                
+            // Get translated strings, try full locale, fallback to locale without region code
+            let messages = localeData[localeWithoutRegionCode] || localeData[action.locale];
+
+            // From objects format to flat
+            messages = flattenMessages(messages)
+
+            return {
+                'locale': action.locale,
+                'messages': messages
+            }
         default:
             return state
     }
 }
-  
-function messages(state = null, action) {
-    switch (action.type) {
-        case 'SET_MESSAGES':
-            return action.messages
-        default:
-            return state
-    }
-}
-  
+
 const baladoApp = combineReducers({
-    locale,
-    messages
+    i18n
 })
 
 // export global reducer

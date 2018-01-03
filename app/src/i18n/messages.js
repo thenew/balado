@@ -1,12 +1,14 @@
 export default {
-    'en': {
+    'en-US': {
         card: {
-            moreInfo: 'More info'
+            moreInfo: 'More info',
+            square: 'square'
         }
     },
-    'fr': {
+    'fr-FR': {
         card: {
-            moreInfo: 'Plus d’infos'
+            moreInfo: 'Plus d’infos',
+            square: 'carré'
         }
     }
 }

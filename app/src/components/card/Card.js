@@ -9,6 +9,9 @@ export default class Card extends React.Component {
         return (
 	        <div className={s.card}>
 				<div className={s.cardInner}>
+					<FormattedMessage 
+						id="card.square"
+					/>
 					<div className={s.image}></div>
 					<div className={s.logo}></div>
 					<h2 className={s.title}>{this.props.title}</h2>

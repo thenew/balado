@@ -3,7 +3,7 @@ import s from './header.styl'
 import { Link } from 'react-router-dom'
 
 import { bindActionCreators } from 'redux'
-import {connect} from 'react-redux';  
+import { connect } from 'react-redux';
 
 import * as TodoActionCreators from 'Src/actions'
 console.log(TodoActionCreators)
@@ -54,7 +54,6 @@ class Header extends React.Component {
                         <li className={s.menuItem}><Link to="/">Home</Link></li>
                         <li className={s.menuItem}><Link to="/podcast/1">Podcast</Link></li>
                         <li className={s.menuItem}><Link to="/about">About</Link></li>
-                        <li className={s.menuItem}>{locale == 'fr-FR'} { locale }</li>
                         <li>
                             <select name="" id="lang" value={locale} onChange={this.change}>
                                 <option value="" disabled selected>Select</option>
@@ -70,16 +69,15 @@ class Header extends React.Component {
 }
 
 // Map state to Header components
-function mapStateToProps(state, ownProps) {  
+function mapStateToProps(state, ownProps) {
     return {
-        locale: state.locale,
-        messages: state.messages
+        locale: state.i18n.locale,
     }
 }
-  
-function mapDispatchToProps(dispatch) {  
+
+function mapDispatchToProps(dispatch) {
     // return {actions: bindActionCreators(attendanceRecordActions, dispatch)
     return {}
 }
-  
+
 export default connect(mapStateToProps)(Header)
