@@ -41,7 +41,7 @@ import ReactIntlPlugin from 'react-intl-webpack-plugin'
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = (NODE_ENV == 'development')
 
-module.exports = {
+let config = {
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
         
@@ -239,3 +239,11 @@ module.exports = {
 
     // stats: 'minimal'
 }
+
+// Export languages script
+import langExportConfig from './webpack.lang-export';
+if(NODE_ENV == 'languages') {
+    config = {...config, ...langExportConfig}
+}
+
+module.exports = config;
