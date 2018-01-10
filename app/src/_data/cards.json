@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "title": "Cosy corner",
+        "category": "categorie A",
+        "category_id": 1,
+        "description_fr": "Le podcast de tous les p'tits cosys, par Medoc et Moguri.\nOn y cause de pop-culture de manière fortement aléatoire, mais toujours détendue.",
+        "theme": "multiple",
+        "genre": "talk",
+        "format": "long",
+        "network": "",
+        "lang": "fr",
+        "url": "https://soundcloud.com/lecosycorner",
+        "url_label": "soundcloud.com/lecosycorner",
+        "business_model": ["chômage"]
+    },
+    {
+        "id": 2,
+        "title": "Title II",
+        "format": "short",
+        "category": "categorie A",
+        "category_id": 1
+    },
+    {
+        "id": 3,
+        "title": "Title III",
+        "format": "medium",
+        "category": "categorie B",
+        "category_id": 2
+    },
+    {
+        "id": 4,
+        "title": "Title IV",
+        "format": "long",
+        "category": "categorie C",
+        "category_id": 3
+    },
+    {
+        "id": 5,
+        "title": "Title V",
+        "format": "medium",
+        "category": "categorie C",
+        "category_id": 3
+    }
+]

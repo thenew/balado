@@ -1,0 +1,11 @@
+[
+  {
+    "id": "menu.home",
+    "description": "Home link",
+    "defaultMessage": "Home"
+  },
+  {
+    "id": "menu.about",
+    "defaultMessage": "About"
+  }
+]

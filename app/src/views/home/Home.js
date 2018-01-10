@@ -1,15 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import data from 'Data/cards.json'
 
 import s from './home.styl'
 import Base from '../../Base';
 import CardList from 'Components/card-list/CardList'
-import data from 'Data/cards.json'
+import Filters from 'Components/filters/Filters'
 
 export default class Home extends Base {
 	constructor(props) {
+		console.log("%c Home ", 'background: #000; color: #ffff00; padding: 1px 0;');
 		super(props)
 		this.filterList = this.filterList.bind(this);
+
+		console.log("this.props: ", this.props);
 
 		this.state = {
 			items: data
@@ -40,15 +43,7 @@ export default class Home extends Base {
         return (
         	<div className={'view ' + s.view}>
 				<div className="wrap">
-					<div className={s.title}>Home component</div>
-
-					<div>
-						<Link to="/">None</Link>
-						<Link to="/category/1">Categorie 1</Link>
-						<Link to="/category/2">Categorie 2</Link>
-						<Link to="/category/3">Categorie 3</Link>
-					</div>
-
+					<Filters filter={this.props.match.params.filter} />
 					<CardList items={this.state.items}/>
 				</div>
         	</div>

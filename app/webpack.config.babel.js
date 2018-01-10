@@ -41,17 +41,14 @@ import ReactIntlPlugin from 'react-intl-webpack-plugin'
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = (NODE_ENV == 'development')
 
+// get common
+import common from './webpack.common';
+
 let config = {
-    entry: path.resolve(__dirname, 'src/index.js'),
-    output: {
+    ...common,
         
-        // the target directory for all output files
-        // must be an absolute path (use the Node.js path module)
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js', // entry name substitution
-        publicPath: '/' // important
-    },
     
+
     module: {
         loaders: [
 
@@ -219,31 +216,12 @@ let config = {
         // suppress error shown in console
         quiet: false,
     },
-
-    resolve: {
-
-        alias: {
-            Src: path.resolve(__dirname, './src'),
-            Components: path.resolve(__dirname, './src/components'),
-            Views: path.resolve(__dirname, './src/views'),
-            Styles: path.resolve(__dirname, './src/assets/styles'),
-            SvgIcons: path.resolve(__dirname, './src/assets/svg'),
-            Languages: path.resolve(__dirname, './src/languages'),
-            Data: path.resolve(__dirname, './src/data'),
-        },
-
-        // enable importing JS files without specifying their's extenstion
-        // so we can write: import MyComponent from './my-component';
-        extensions: ['.js', '.json', '.styl'],
-    },
-
-    // stats: 'minimal'
 }
 
 // Export languages script
 import langExportConfig from './webpack.lang-export';
 if(NODE_ENV == 'languages') {
-    config = {...config, ...langExportConfig}
+    config = {...common, ...langExportConfig}
 }
 
 module.exports = config;

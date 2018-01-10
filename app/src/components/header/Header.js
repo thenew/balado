@@ -50,7 +50,7 @@ class Header extends React.Component {
         return (
             <header className={s.header}>
                 <div className="wrap">
-                    <h2>․﹒◉．∙․◦﹒．○•</h2>
+                    <h2 className={s.logo}>․◉﹒∙◦○•</h2>
                     <ul className={s.menu}>
                         <li className={s.menuItem}>
                             <Link to="/">

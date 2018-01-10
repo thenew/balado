@@ -15,7 +15,11 @@ export default class CardList extends React.Component {
             <ul className={s.cards}>
             {
                 this.props.items.map(function(item) {
-                    return <li className={s.card} key={item.id}><Card category={item.category} title={item.title} /></li>
+                    return ( 
+                        <li className={s.card} key={item.id}>
+                            <Card {...item} />
+                        </li>
+                    );
                 })
             }
             </ul>

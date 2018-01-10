@@ -6,45 +6,23 @@ import Icon from 'Components/Icon'
 export default class Card extends React.Component {
 
     render() {
+		const item = this.props
+
         return (
 	        <div className={s.card}>
 				<div className={s.cardInner}>
-					<FormattedMessage 
-						id="card.square"
-					/>
-					<div className={s.image}></div>
-					<div className={s.logo}></div>
-					<h2 className={s.title}>{this.props.title}</h2>
-					<p className={s.category}>{this.props.category}</p>
-					<a href="" className="twitter">
-						<Icon id="twitter-icon" className="twitter-icon" width="30" />
-					</a>
-					<a href="" className="patreon">
-						<Icon id="patreon-icon" width="30" />
-					</a>
-					<div>
-						<a href="">
-						<FormattedMessage 
-							id="card.moreInfo"
-							defaultMessage="More info"
-							description="Card see more"
-						/>
-						</a>
+					<div className={s.header}>
+						<h2 className={s.title}>{item.title}</h2>
+						<div className={s.theme}>{item.theme}</div>
 					</div>
-					<div>
-						<FormattedDate
-						value={Date.now()}
-						year='numeric'
-						month='long'
-						day='2-digit'
-						hour='numeric'
-						minute='numeric'
-						/>
+					<div className={s.picture}>
+						<div className={s.image}></div>
+						<div className={s.logo}></div>
 					</div>
-					<div>
-						<FormattedRelative
-						value={new Date(1459832991883)}
-						/>
+					<div className={s.texts}>
+						<p className={s.category}>{item.category}</p>
+						<p className={s.description}>{item.description}</p>
+						<a className={s.link} href="{item.url}" target="_blank">{item.url_label}</a>
 					</div>
 				</div>
 	        </div>
