@@ -22,7 +22,11 @@ export default class Card extends React.Component {
 					<div className={s.texts}>
 						<p className={s.category}>{item.category}</p>
 						<p className={s.description}>{item.description}</p>
+						<p className={s.description}>{item.format}</p>
 						<a className={s.link} href="{item.url}" target="_blank">{item.url_label}</a>
+						<FormattedRelative
+						value={new Date(1459832991883)}
+						/>
 					</div>
 				</div>
 	        </div>

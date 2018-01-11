@@ -1,6 +1,8 @@
 /**
  * Webpack
- * Translated strings export to src/languages/export
+ * Translated strings export to src/_languages
+ * 
+ * use the reactIntlMessages.json file as source file in memsource
  */
 
 // Node's native package
@@ -13,11 +15,12 @@ import WebpackCleanPlugin from 'webpack-clean'
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
 
 // i18n
+// combine files, extracted by babel-plugin-react-intl, into one message file called `reactIntlMessages.json` and put this file into the webpack output path.
 import ReactIntlPlugin from 'react-intl-webpack-plugin'
 
 module.exports = {
     output: {
-        path: path.resolve(__dirname, 'src/languages/export'),
+        path: path.resolve(__dirname, 'src/_languages'),
         filename: '[name].js',
         publicPath: '/'
     },
@@ -47,7 +50,7 @@ module.exports = {
     },
     plugins: [
         new WebpackCleanPlugin([
-            'src/languages/export/main.js',
+            'src/_languages/main.js',
         ]),
         new FriendlyErrorsWebpackPlugin(),
         new ReactIntlPlugin(),

@@ -1,6 +1,7 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
+    Switch,
     Route,
     Link
 } from 'react-router-dom'
@@ -15,11 +16,19 @@ export default class App extends React.Component {
         <Router>
             <div>
                 <Header />
-                <Route exact path="/" component={Home} />
-                <Route exact path="/category" component={Home} />
-                <Route path="/category/:slug" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/about" component={About} />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/genre/:genre/theme/:theme/format/:format" component={Home} />
+                    <Route path="/theme/:theme/format/:format" component={Home} />
+                    <Route path="/genre/:genre/format/:format" component={Home} />
+                    <Route path="/genre/:genre/theme/:theme" component={Home} />
+                    <Route path="/genre/:genre" component={Home} />
+                    <Route path="theme/:theme" component={Home} />
+                    <Route path="/format/:format" component={Home} />
+                    {/* <Route exact path="/category" component={Home} /> */}
+                    {/* <Route path="/category/:slug" component={Home} /> */}
+                    <Route path="/about" component={About} />
+                </Switch>
             </div>
         </Router>
         );

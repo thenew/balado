@@ -1,5 +1,4 @@
 import React from 'react';
-import data from 'Data/cards.json'
 
 import s from './home.styl'
 import Base from '../../Base';
@@ -13,10 +12,6 @@ export default class Home extends Base {
 		this.filterList = this.filterList.bind(this);
 
 		console.log("this.props: ", this.props);
-
-		this.state = {
-			items: data
-		}
 	}
 
 	componentDidMount() {
@@ -43,8 +38,8 @@ export default class Home extends Base {
         return (
         	<div className={'view ' + s.view}>
 				<div className="wrap">
-					<Filters filter={this.props.match.params.filter} />
-					<CardList items={this.state.items}/>
+					<Filters {...this.props.match.params} />
+					<CardList/>
 				</div>
         	</div>
     	);

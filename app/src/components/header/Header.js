@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 
-import * as TodoActionCreators from 'Src/actions'
-console.log(TodoActionCreators)
+import * as AppActionCreators from 'Src/redux/actions/actions'
 
 
 class Header extends React.Component {
@@ -20,7 +19,7 @@ class Header extends React.Component {
         const {dispatch} = props;
 
 
-        this.boundActionCreators = bindActionCreators(TodoActionCreators, dispatch)
+        this.boundActionCreators = bindActionCreators(AppActionCreators, dispatch)
         console.log(this.boundActionCreators)
 
         // props.locale = store.getState('locale')
@@ -40,7 +39,7 @@ class Header extends React.Component {
 
         // calling a function that creates an action
         // and dispatch the action
-        let action = TodoActionCreators.setLocale(value)
+        let action = AppActionCreators.setLocale(value)
         dispatch(action)
     }
 

@@ -9,8 +9,7 @@
     "defaultMessage": "About"
   },
   {
-    "id": "card.moreInfo",
-    "description": "Card see more",
-    "defaultMessage": "More info"
+    "id": "filters.format1",
+    "defaultMessage": "Short"
   }
 ]

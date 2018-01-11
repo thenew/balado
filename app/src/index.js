@@ -11,9 +11,18 @@ import App from './App'
 // # Redux
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import baladoApp from './reducers'
-let store = createStore(baladoApp)
+import baladoApp from './redux/reducers/index'
+import { loadState, saveState } from './localstorage'
+import throttle from 'lodash/throttle'
 
+let persistedState = loadState()
+let store = createStore(baladoApp, persistedState)
+
+// store.subscribe(throttle(() => {
+//     saveState({
+//         i18n: store.getState().i18n
+//     })
+// }, 1000))
 
 // # SVG
 // Import all the svg in /svg at once instead of import them before every use
@@ -27,24 +36,12 @@ import './assets/styles/app.styl';
 
 
 // # i18n l10n
-import ConnectedIntlProvider from './ConnectedIntlProvider';
+import ConnectedIntlProvider from 'Components/ConnectedIntlProvider';
+
 import {addLocaleData} from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import fr from 'react-intl/locale-data/fr'
 addLocaleData([...en, ...fr])
-
-// Get user's browser language, fallback to en
-let locale =
-    (navigator.languages && navigator.languages[0])
-    || navigator.language
-    || navigator.userLanguage
-    || 'en-US'
-
-// set locale
-store.dispatch({
-    "type": 'SET_LOCALE',
-    "locale": locale
-})
 
 ReactDOM.render(
     <Provider store={store}> 

@@ -1,14 +1,5 @@
 [
   {
-    "id": "menu.home",
-    "description": "Home link",
-    "defaultMessage": "Home"
-  },
-  {
-    "id": "menu.about",
-    "defaultMessage": "About"
-  },
-  {
     "id": "filters.format0",
     "defaultMessage": "All"
   },

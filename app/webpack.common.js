@@ -19,6 +19,7 @@ module.exports = {
             Languages: path.resolve(__dirname, './src/_languages'),
             Components: path.resolve(__dirname, './src/components'),
             Views: path.resolve(__dirname, './src/views'),
+            Utils: path.resolve(__dirname, './src/utils'),
             Styles: path.resolve(__dirname, './src/assets/styles'),
             SvgIcons: path.resolve(__dirname, './src/assets/svg'),
         },

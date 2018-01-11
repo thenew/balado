@@ -9,8 +9,15 @@
     "defaultMessage": "À propos"
   },
   {
-    "id": "card.moreInfo",
-    "description": "Card see more",
-    "defaultMessage": "Plus d’infos"
+    "id": "filters.format1",
+    "defaultMessage": "Court"
+  },
+  {
+    "id": "filters.format2",
+    "defaultMessage": "Moyen"
+  },
+  {
+    "id": "filters.format3",
+    "defaultMessage": "Long"
   }
 ]
