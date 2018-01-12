@@ -2,8 +2,6 @@
     {
         "id": 1,
         "title": "Cosy corner",
-        "category": "categorie A",
-        "category_id": 1,
         "description_fr": "Le podcast de tous les p'tits cosys, par Medoc et Moguri.\nOn y cause de pop-culture de manière fortement aléatoire, mais toujours détendue.",
         "theme": "multiple",
         "genre": "talk",
@@ -12,34 +10,77 @@
         "lang": "fr",
         "url": "https://soundcloud.com/lecosycorner",
         "url_label": "soundcloud.com/lecosycorner",
-        "business_model": ["chômage"]
+        "business_model": ["chômage"],
+        "logo": "cosy-corner.jpg"
     },
     {
         "id": 2,
-        "title": "Title II",
-        "format": "short",
-        "category": "categorie A",
-        "category_id": 1
+        "title": "Les Démons du MIDI",
+        "description_fr": "Gautoz et Pipomantis retroussent leurs manches et fouillent dans leurs malles à bandes-son pour en sortir les pépites jeux vidéo chères à leurs cœurs. Nul besoin d’être connoisseur, alors chaussez votre bon vieux casque et c’est ti-par.",
+        "theme": ["music", "video game"],
+        "genre": "music",
+        "format": "long",
+        "network": "Geekzone",
+        "lang": "fr",
+        "url": ["https://www.geekzone.fr/lddm/", "http://www.radiokawa.com/les-demons-du-midi"],
+        "url_label": ["geekzone.fr/lddm", "Archives RadioKawa"],
+        "business_model": ["passion"],
+        "authors": ["Gautoz", "Pipomantis"],
+        "frequency": "monthly",
+        "logo": "lddm.jpg"
     },
     {
         "id": 3,
         "title": "Title III",
         "format": "medium",
-        "category": "categorie B",
-        "category_id": 2
+        "logo": "01.png"
     },
     {
         "id": 4,
         "title": "Title IV",
         "format": "long",
-        "category": "categorie C",
-        "category_id": 3
+        "logo": "02.jpg"
     },
     {
         "id": 5,
         "title": "Title V",
         "format": "medium",
-        "category": "categorie C",
-        "category_id": 3
+        "logo": "03.png"
+    },
+    {
+        "id": 6,
+        "title": "Title V",
+        "format": "medium",
+        "logo": "04.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Title V",
+        "format": "medium",
+        "logo": "05.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Title V",
+        "format": "medium",
+        "logo": "06.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Title V",
+        "format": "medium",
+        "logo": "07.png"
+    },
+    {
+        "id": 10,
+        "title": "Title V",
+        "format": "medium",
+        "logo": "08.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Title V",
+        "format": "medium",
+        "logo": "09.jpg"
     }
 ]

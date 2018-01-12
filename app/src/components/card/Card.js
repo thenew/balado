@@ -17,7 +17,7 @@ export default class Card extends React.Component {
 					</div>
 					<div className={s.picture}>
 						<div className={s.image}></div>
-						<div className={s.logo}></div>
+						<div className={s.logo}><img src={item.logo} /></div>
 					</div>
 					<div className={s.texts}>
 						<p className={s.category}>{item.category}</p>
