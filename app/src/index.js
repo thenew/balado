@@ -35,19 +35,9 @@ svgIcons.keys().map(svgIcons)
 import './assets/styles/app.styl';
 
 
-// # i18n l10n
-import ConnectedIntlProvider from 'Components/ConnectedIntlProvider';
-
-import {addLocaleData} from 'react-intl'
-import en from 'react-intl/locale-data/en'
-import fr from 'react-intl/locale-data/fr'
-addLocaleData([...en, ...fr])
-
 ReactDOM.render(
     <Provider store={store}> 
-        <ConnectedIntlProvider> 
-            <App />
-        </ConnectedIntlProvider>
+        <App />
     </Provider>,
     document.getElementById('root')
 );

@@ -1,5 +1,4 @@
 import React from 'react'
-import { FormattedMessage, FormattedDate, FormattedRelative } from 'react-intl'
 import s from './card.styl'
 import Icon from 'Components/Icon'
 
@@ -24,9 +23,6 @@ export default class Card extends React.Component {
 						<p className={s.description}>{item.description}</p>
 						<p className={s.description}>{item.format}</p>
 						<a className={s.link} href="{item.url}" target="_blank">{item.url_label}</a>
-						<FormattedRelative
-						value={new Date(1459832991883)}
-						/>
 					</div>
 				</div>
 	        </div>
