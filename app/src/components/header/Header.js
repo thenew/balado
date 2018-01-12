@@ -1,5 +1,4 @@
 import React from 'react'
-import { FormattedMessage } from 'react-intl';
 import s from './header.styl'
 import { Link } from 'react-router-dom'
 
@@ -53,17 +52,17 @@ class Header extends React.Component {
                     <ul className={s.menu}>
                         <li className={s.menuItem}>
                             <Link to="/">
-                                <FormattedMessage 
+                                {/* <FormattedMessage 
                                     id="menu.home"
                                     defaultMessage="Home"
                                     description="Home link"
-                                />
+                                /> */}
                             </Link>
                         </li>
                         <li className={s.menuItem}><Link to="/podcast/1">Podcast</Link></li>
                         <li className={s.menuItem}>
                             <Link to="/about">
-                            <FormattedMessage id="menu.about" defaultMessage="About" />
+                            {/* <FormattedMessage id="menu.about" defaultMessage="About" /> */}
                             </Link>
                         </li>
                         <li>

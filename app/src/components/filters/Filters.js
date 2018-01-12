@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './filters.styl'
-import { FormattedMessage, FormattedDate } from 'react-intl'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -32,16 +31,16 @@ export default class Filters extends React.Component {
 	        <div className={s.filters}>
 				Format:
 				<Link className={s.filtersItem} to={this.urlBuilder({format: 'all'})}>
-					<FormattedMessage id="filters.format0" defaultMessage="All" />
+					{/* <FormattedMessage id="filters.format0" defaultMessage="All" /> */}
 				</Link>
 				<Link className={s.filtersItem} to={this.urlBuilder({format: 'short'})}>
-					<FormattedMessage id="filters.format1" defaultMessage="Short" />
+					{/* <FormattedMessage id="filters.format1" defaultMessage="Short" /> */}
 				</Link>
 				<Link className={s.filtersItem} to={this.urlBuilder({format: 'medium'})}>
-					<FormattedMessage id="filters.format2" defaultMessage="Medium" />
+					{/* <FormattedMessage id="filters.format2" defaultMessage="Medium" /> */}
 				</Link>
 				<Link className={s.filtersItem} to={this.urlBuilder({format: 'long'})}>
-					<FormattedMessage id="filters.format3" defaultMessage="Long" />
+					{/* <FormattedMessage id="filters.format3" defaultMessage="Long" /> */}
 				</Link>
 	        </div>
 		);
