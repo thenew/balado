@@ -27,6 +27,9 @@ export default class Card extends React.Component {
 						<FormattedRelative
 						value={new Date(1459832991883)}
 						/>
+						<a href="" className="twitter">
+							<Icon id="twitter-icon" width="30" />
+						</a>
 					</div>
 				</div>
 	        </div>

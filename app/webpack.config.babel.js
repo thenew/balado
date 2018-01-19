@@ -35,8 +35,6 @@ import poststylus from 'poststylus'
 // i18n
 import ReactIntlPlugin from 'react-intl-webpack-plugin'
 
-// import svgoLoader from 'svgo-loader'
-
 // set environment, coming from package.json scripts
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = (NODE_ENV == 'development')
@@ -137,7 +135,6 @@ let config = {
             },
             {
                 test: /\.svg$/,
-                include: path.resolve('./src/assets/svg'),
                 use: [
                   'svg-sprite-loader',
                   'svgo-loader'

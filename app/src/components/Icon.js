@@ -6,14 +6,14 @@ export default class Icon extends React.PureComponent {
 
     // get attribute from props
     let inputProps = {
-      className: undefined,
+      className: id,
       ...this.props
     };
     inputProps.id = undefined
     
     return (
       <svg {...inputProps} >
-        <use xlinkHref={`#${id}`} />
+        <use href={`#${id}`} />
       </svg>
     );
   }
