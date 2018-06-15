@@ -10,7 +10,7 @@ export default class Icon extends React.PureComponent {
       ...this.props
     };
     inputProps.id = undefined
-    
+
     return (
       <svg {...inputProps} >
         <use href={`#${id}`} />

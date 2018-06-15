@@ -1,6 +1,6 @@
 /**
  * Webpack
- * 
+ *
  * Entry
  * Output
  * Loaders: in module: { rules: [] }
@@ -44,8 +44,6 @@ import common from './webpack.common';
 
 let config = {
     ...common,
-        
-    
 
     module: {
         loaders: [
@@ -92,7 +90,7 @@ let config = {
                         {
                             loader: 'stylus-loader',
                             options: {
-                                use: [poststylus([ 
+                                use: [poststylus([
                                     'autoprefixer',
                                     'postcss-custom-properties' // css variables
                                 ])],
@@ -116,7 +114,7 @@ let config = {
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
                 query: {
-                    
+
                     // i18n ReactIntlPlugin combine messages files
                     "cacheDirectory": true,
                     "metadataSubscribers":[ReactIntlPlugin.metadataContextFunctionName],
@@ -178,9 +176,9 @@ let config = {
         new FaviconsWebpackPlugin({
             logo: path.resolve(__dirname, 'src/assets/icons/app-icon.png'), // source image
             inject: !IS_DEV, // Inject the html into the html-webpack-plugin
-            background: '#fff', // favicon background color 
+            background: '#fff', // favicon background color
             title: 'Balado', // app title
-        
+
             // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
             icons: {
                 android: true, // Android homescreen icon
@@ -197,7 +195,7 @@ let config = {
         }),
         new ReactIntlPlugin(),
     ],
-    
+
     devServer: {
         // static file location
         contentBase: path.join(__dirname, 'dist'),
