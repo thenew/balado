@@ -35,6 +35,7 @@ MVP 1.0
 - Page about
 - Card 3D animation on hover
 - Linter CSS and JS
+- react fragment
 
 1.1
 - server side render for SEO

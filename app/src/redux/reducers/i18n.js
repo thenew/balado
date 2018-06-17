@@ -1,39 +1,41 @@
 // Reducer i18n locale
-import en_US from 'reactIntlJson-loader!Languages/en_US'
-import fr_FR from 'reactIntlJson-loader!Languages/fr_FR'
+import enUS from 'Languages/en_US'
+import frFR from 'Languages/fr_FR'
 
 const languages = {
-    'fr-FR': fr_FR,
-    'en-US': en_US,
+  'fr-FR': frFR,
+  'en-US': enUS
 }
 
 // Get user's browser language, fallback to en
-let locale =
-    (navigator.languages && navigator.languages[0])
-    || navigator.language
-    || navigator.userLanguage
-    || Object.keys(languages)[0]
+const locale =
+    (navigator.languages && navigator.languages[0]) ||
+    navigator.language ||
+    navigator.userLanguage ||
+    Object.keys(languages)[0]
 
 const defaultState = {
-    'locale': locale,
-    'messages': languages[locale]
+  'locale': locale,
+  'messages': languages[locale]
 }
 
-console.log("defaultState: ", defaultState);
+console.log('defaultState: ', defaultState)
 
 export function i18n(state = defaultState, action) {
 
-    switch (action.type) {
-        case 'SET_LOCALE':
+  let locale, messages
 
-            let locale = action.locale.replace('-', '_')
-            let messages = languages[locale];
-            
-            return {
-                'locale': action.locale,
-                'messages': messages
-            }
-        default:
-            return state
-    }
+  switch (action.type) {
+    case 'SET_LOCALE':
+
+      locale = action.locale.replace('-', '_')
+      messages = languages[locale]
+
+      return {
+        'locale': action.locale,
+        'messages': messages
+      }
+    default:
+      return state
+  }
 }

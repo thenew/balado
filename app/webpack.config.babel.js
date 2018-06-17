@@ -36,8 +36,8 @@ import poststylus from 'poststylus'
 import ReactIntlPlugin from 'react-intl-webpack-plugin'
 
 // set environment, coming from package.json scripts
-const NODE_ENV = process.env.NODE_ENV;
-const IS_DEV = (NODE_ENV == 'development')
+const NODE_ENV = process.env.NODE_ENV
+const IS_DEV = (NODE_ENV === 'development')
 
 // get common
 import common from './webpack.common';
@@ -75,7 +75,7 @@ let config = {
         include: path.resolve(__dirname, 'src/'),
         exclude: path.resolve(__dirname, 'src/assets/styles/'),
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
@@ -132,8 +132,8 @@ let config = {
         query: {
 
           // i18n ReactIntlPlugin combine messages files
-          "cacheDirectory": true,
-          "metadataSubscribers":[ReactIntlPlugin.metadataContextFunctionName],
+          'cacheDirectory': true,
+          'metadataSubscribers':[ReactIntlPlugin.metadataContextFunctionName],
 
           plugins: [
             'transform-react-jsx',
@@ -166,8 +166,15 @@ let config = {
             }
           }
         ]
+      },
+      {
+        test: /\.json$/,
+        include: path.resolve('./src/_languages'),
+        use: [
+          'reactIntlJson-loader'
+        ]
       }
-    ],
+    ]
   },
 
   plugins: [

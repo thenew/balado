@@ -7,16 +7,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-
 // # Redux
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import baladoApp from './redux/reducers/index'
-import { loadState, saveState } from './localstorage'
-import throttle from 'lodash/throttle'
+import { loadState } from './localstorage'
 
-let persistedState = loadState()
-let store = createStore(baladoApp, persistedState)
+const persistedState = loadState()
+const store = createStore(baladoApp, persistedState)
 
 // store.subscribe(throttle(() => {
 //     saveState({
@@ -26,28 +24,26 @@ let store = createStore(baladoApp, persistedState)
 
 // # SVG
 // Import all the svg in /svg at once instead of import them before every use
-let svgIcons = require.context('SvgIcons', false, /.*\.svg$/)
+const svgIcons = require.context('SvgIcons', false, /.*\.svg$/)
 svgIcons.keys().map(svgIcons)
-
 
 // # Styles
 // Import base styles
-import './assets/styles/app.styl';
-
+import './assets/styles/app.styl'
 
 // # i18n l10n
-import ConnectedIntlProvider from 'Components/ConnectedIntlProvider';
+import ConnectedIntlProvider from 'Components/ConnectedIntlProvider'
 
-import {addLocaleData} from 'react-intl'
+import { addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
 import fr from 'react-intl/locale-data/fr'
 addLocaleData([...en, ...fr])
 
 ReactDOM.render(
-    <Provider store={store}> 
-        <ConnectedIntlProvider> 
-            <App />
-        </ConnectedIntlProvider>
-    </Provider>,
-    document.getElementById('root')
-);
+  <Provider store={store}>
+    <ConnectedIntlProvider>
+      <App />
+    </ConnectedIntlProvider>
+  </Provider>,
+  document.getElementById('root')
+)
