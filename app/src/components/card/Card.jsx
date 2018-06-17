@@ -18,20 +18,41 @@ export default class Card extends React.Component {
             <div className={css('theme')}>{item.theme}</div>
           </div>
           <div className={css('picture')}>
-            <div className={css('image')} />
-            <div className={css('logo')}><img src={item.logo} /></div>
+            <div className={css('image')}>
+              <img src={require(`Images/${item.image}`)} alt='' />
+            </div>
+            <div className={css('logo')}>
+              <img src={require(`Images/${item.logo}`)} alt='' />
+            </div>
           </div>
           <div className={css('texts')}>
-            <p className={css('category')}>{item.category}</p>
+            <p className={css('genre')}>{item.genre}</p>
             <p className={css('description')}>{item.description}</p>
-            <p className={css('description')}>{item.format}</p>
-            <a className={css('link')} href='{item.url}' target='_blank'>{item.url_label}</a>
-            <FormattedRelative
-              value={new Date(1459832991883)}
-            />
-            <a href='' className='twitter'>
+            <p className={css('format')}>{item.format}</p>
+            <div className={css('network')}>{item.network}</div>
+            <div>
+              <a className={css('link')} href='{item.url}' target='_blank'>{item.url_label}</a>
+            </div>
+            { item.business_model && item.business_model.length &&
+              item.business_model.map((businessModel, i) => {
+                return (
+                  <div key={i}>
+                    { businessModel.url
+                      ? <a href={businessModel.url}>
+                        {businessModel.name}
+                      </a>
+                      : <span>{businessModel.name}</span>
+                    }
+                  </div>
+                )
+              })
+            }
+            {/* <a href='' className='twitter'>
               <Icon id='twitter-icon' width='30' />
             </a>
+            <FormattedRelative
+              value={new Date(1459832991883)}
+            /> */}
           </div>
         </div>
       </div>

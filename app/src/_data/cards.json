@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Cosy corner",
-        "description_fr": "Le podcast de tous les p'tits cosys, par Medoc et Moguri.\nOn y cause de pop-culture de manière fortement aléatoire, mais toujours détendue.",
+        "description": "Le podcast de tous les p'tits cosys, par Medoc et Moguri.\nOn y cause de pop-culture de manière fortement aléatoire, mais toujours détendue.",
         "theme": "multiple",
         "genre": "talk",
         "format": "long",
@@ -18,12 +18,13 @@
                 "url": "https://www.patreon.com/lecosycorner"
             }
         ],
+        "image": "02.jpg",
         "logo": "cosy-corner.jpg"
     },
     {
         "id": 2,
         "title": "Les Démons du MIDI",
-        "description_fr": "Gautoz et Pipomantis retroussent leurs manches et fouillent dans leurs malles à bandes-son pour en sortir les pépites jeux vidéo chères à leurs cœurs. Nul besoin d’être connoisseur, alors chaussez votre bon vieux casque et c’est ti-par.",
+        "description": "Gautoz et Pipomantis retroussent leurs manches et fouillent dans leurs malles à bandes-son pour en sortir les pépites jeux vidéo chères à leurs cœurs. Nul besoin d’être connoisseur, alors chaussez votre bon vieux casque et c’est ti-par.",
         "theme": ["music", "video game"],
         "genre": "music",
         "format": "long",
@@ -34,60 +35,70 @@
         "business_model": ["passion"],
         "authors": ["Gautoz", "Pipomantis"],
         "frequency": "monthly",
+        "image": "lddm.jpg",
         "logo": "lddm.jpg"
     },
     {
         "id": 3,
         "title": "Title III",
         "format": "medium",
+        "image": "01.png",
         "logo": "01.png"
     },
     {
         "id": 4,
         "title": "Title IV",
         "format": "long",
+        "image": "02.jpg",
         "logo": "02.jpg"
     },
     {
         "id": 5,
         "title": "Title V",
         "format": "medium",
+        "image": "03.png",
         "logo": "03.png"
     },
     {
         "id": 6,
         "title": "Title V",
         "format": "medium",
+        "image": "04.jpg",
         "logo": "04.jpg"
     },
     {
         "id": 7,
         "title": "Title V",
         "format": "medium",
+        "image": "05.jpg",
         "logo": "05.jpg"
     },
     {
         "id": 8,
         "title": "Title V",
         "format": "medium",
+        "image": "06.jpg",
         "logo": "06.jpg"
     },
     {
         "id": 9,
         "title": "Title V",
         "format": "medium",
+        "image": "07.png",
         "logo": "07.png"
     },
     {
         "id": 10,
         "title": "Title V",
         "format": "medium",
+        "image": "08.jpg",
         "logo": "08.jpg"
     },
     {
         "id": 11,
         "title": "Title V",
         "format": "medium",
+        "image": "09.jpg",
         "logo": "09.jpg"
     }
 ]

@@ -5,7 +5,7 @@ import { IntlProvider } from 'react-intl'
 // When the state of the redux store changes, this function will be called, if the props that come out of
 // this function are different, then the component that is wrapped is re-rendered.
 function mapStateToProps(state) {
-  console.log('%c mapStateToProps ', 'background: #000; color: #ffff00; padding: 1px 0;')
+  // console.log('%c mapStateToProps ', 'background: #000; color: #ffff00; padding: 1px 0;')
   return {
     locale: state.i18n.locale,
     messages: state.i18n.messages

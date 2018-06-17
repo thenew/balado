@@ -9,7 +9,7 @@
 */
 
 // Node's native package
-import path from 'path';
+import path from 'path'
 
 const context = path.resolve(__dirname, 'src')
 
@@ -111,7 +111,7 @@ let config = {
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
-      {
+      /* {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
         use: [
@@ -123,8 +123,8 @@ let config = {
               eslintPath: 'eslint'
             }
           }
-        ],
-      },
+        ]
+      }, */
       {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
@@ -163,6 +163,20 @@ let config = {
             options: {
               name: '[name].[ext]',
               outputPath: 'fonts/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        include: path.resolve('./src/assets/images'),
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: '[name].[hash:8].[ext]',
+              outputPath: 'media/'
             }
           }
         ]
