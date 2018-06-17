@@ -6,11 +6,18 @@
         "theme": "multiple",
         "genre": "talk",
         "format": "long",
-        "network": "",
+        "network": "À L'aise Blaze",
         "lang": "fr",
         "url": "https://soundcloud.com/lecosycorner",
         "url_label": "soundcloud.com/lecosycorner",
-        "business_model": ["chômage"],
+        "business_model": [{
+                "name": "chômage"
+            },
+            {
+                "name": "patreon",
+                "url": "https://www.patreon.com/lecosycorner"
+            }
+        ],
         "logo": "cosy-corner.jpg"
     },
     {

@@ -3,14 +3,14 @@ import path from 'path';
 module.exports = {
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
-        
+
         // the target directory for all output files
         // must be an absolute path (use the Node.js path module)
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js', // entry name substitution
         publicPath: '/' // important
     },
-    
+
     resolve: {
 
         alias: {
@@ -26,7 +26,7 @@ module.exports = {
 
         // enable importing JS files without specifying their's extenstion
         // so we can write: import MyComponent from './my-component';
-        extensions: ['.js', '.json', '.styl'],
+        extensions: ['.js', '.jsx', '.json', '.styl'],
     },
 
     // stats: 'minimal'

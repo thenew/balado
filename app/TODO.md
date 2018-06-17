@@ -34,6 +34,7 @@ MVP 1.0
 - URLs for each card
 - Page about
 - Card 3D animation on hover
+- Linter CSS and JS
 
 1.1
 - server side render for SEO
