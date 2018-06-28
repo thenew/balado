@@ -27,18 +27,25 @@ class CardList extends React.Component {
  * Filter items based on react router params
  */
 const getFilteredItems = (items, params) => {
-  const filteredItems = items
+  let filteredItems = []
+  let hasFilter = false
   for (const param in params) {
 
     if (!params[param] || params[param] === 'all') {
       continue
     }
 
+    hasFilter = true
+
     items.forEach((item) => {
       if (item[param] === params[param]) {
         filteredItems.push(item)
       }
     })
+  }
+
+  if (!hasFilter) {
+    filteredItems = items
   }
 
   return filteredItems

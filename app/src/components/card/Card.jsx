@@ -18,16 +18,13 @@ export default class Card extends React.Component {
             <div className={css('theme')}>{item.theme}</div>
           </div>
           <div className={css('picture')}>
-            <div className={css('image')}>
-              <img src={require(`Images/${item.image}`)} alt='' />
-            </div>
             <div className={css('logo')}>
               <img src={require(`Images/${item.logo}`)} alt='' />
             </div>
           </div>
           <div className={css('texts')}>
             <p className={css('genre')}>{item.genre}</p>
-            <p className={css('description')}>{item.description}</p>
+            <p hidden className={css('description')}>{item.description}</p>
             <p className={css('format')}>{item.format}</p>
             <div className={css('network')}>{item.network}</div>
             <div>

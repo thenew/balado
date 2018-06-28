@@ -47,30 +47,18 @@ class Header extends React.Component {
       <header className={s.header}>
         <div className='wrap'>
           <h2 className={s.logo}>․◉﹒∙◦○•</h2>
-          <ul className={s.menu}>
-            <li className={s.menuItem}>
-              <Link to='/'>
-                <FormattedMessage
-                  id='menu.home'
-                  defaultMessage='Home'
-                  description='Home link'
-                />
-              </Link>
-            </li>
-            <li className={s.menuItem}><Link to='/podcast/1'>Podcast</Link></li>
-            <li className={s.menuItem}>
-              <Link to='/about'>
-                <FormattedMessage id='menu.about' defaultMessage='About' />
-              </Link>
-            </li>
-            <li>
-              <select name='' id='lang' value={locale} onChange={this.change}>
-                <option value='' disabled selected>Select</option>
-                <option value='fr-FR'>FR</option>
-                <option value='en-US'>EN</option>
-              </select>
-            </li>
-          </ul>
+        </div>
+        <div hidden>
+          <Link to='/about'>
+            <FormattedMessage id='menu.about' defaultMessage='About' />
+          </Link>
+        </div>
+        <div hidden>
+          <select name='' id='lang' value={locale} onChange={this.change}>
+            <option value='' disabled selected>Select</option>
+            <option value='fr-FR'>FR</option>
+            <option value='en-US'>EN</option>
+          </select>
         </div>
       </header>
     )
